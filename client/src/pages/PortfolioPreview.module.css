@@ -1,0 +1,492 @@
+.previewPage {
+  min-height: 100vh;
+  background: #f1eee8;
+  color: #3b3f40;
+  padding-bottom: 80px;
+}
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.previewHeader {
+  min-height: 90px;
+
+  padding: 20px clamp(24px, 5vw, 70px);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  gap: 30px;
+
+  background: rgba(245, 248, 238, 0.95);
+
+  border-bottom: 1px solid rgba(70, 19, 45, 0.1);
+
+  position: sticky;
+  top: 0;
+
+  z-index: 100;
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+/* Small label */
+
+.previewLabel {
+  margin: 0 0 5px;
+
+  color: #a16f70;
+
+  font-size: 10px;
+
+  font-weight: 800;
+
+  letter-spacing: 3px;
+}
+
+/* Heading */
+
+.previewHeader h1 {
+  margin: 0;
+
+  color: #46132d;
+
+  font-size: 27px;
+
+  font-weight: 800;
+
+  letter-spacing: -0.5px;
+}
+
+/* Back button */
+
+.backButton {
+  padding: 11px 18px;
+
+  border: 1px solid rgba(70, 19, 45, 0.18);
+
+  border-radius: 8px;
+
+  background: #ffffff;
+
+  color: #46132d;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.backButton:hover {
+  background: #46132d;
+
+  color: #ffffff;
+
+  transform: translateY(-2px);
+}
+
+/* =========================================================
+   ACTION BAR
+   ========================================================= */
+
+.actionBar {
+  width: min(1400px, calc(100% - 48px));
+
+  margin: 35px auto 25px;
+
+  padding: 22px 24px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  border: 1px solid rgba(70, 19, 45, 0.1);
+
+  border-radius: 18px;
+
+  background: rgba(255, 255, 255, 0.85);
+
+  box-shadow: 0 12px 35px rgba(70, 19, 45, 0.06);
+
+  backdrop-filter: blur(10px);
+}
+
+/* Action information */
+
+.actionInfo {
+  flex: 1;
+}
+
+.actionInfo > span {
+  display: block;
+
+  margin-bottom: 5px;
+
+  color: #a16f70;
+
+  font-size: 9px;
+
+  font-weight: 800;
+
+  letter-spacing: 2px;
+}
+
+.actionInfo p {
+  margin: 0;
+
+  color: #56666a;
+
+  font-size: 12px;
+
+  line-height: 1.5;
+}
+
+/* =========================================================
+   ACTION BUTTONS
+   ========================================================= */
+
+.actionButtons {
+  display: flex;
+
+  align-items: stretch;
+
+  gap: 10px;
+}
+
+/* Base */
+
+.actionButton {
+  min-width: 175px;
+
+  padding: 12px 14px;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 11px;
+
+  border: 1px solid rgba(70, 19, 45, 0.12);
+
+  border-radius: 11px;
+
+  background: #ffffff;
+
+  cursor: pointer;
+
+  text-align: left;
+
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease,
+    background 0.25s ease;
+}
+
+.actionButton:hover {
+  transform: translateY(-3px);
+
+  box-shadow: 0 10px 25px rgba(70, 19, 45, 0.1);
+}
+
+/* Icon */
+
+.buttonIcon {
+  width: 35px;
+  height: 35px;
+
+  flex-shrink: 0;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 9px;
+
+  font-size: 18px;
+
+  font-weight: 700;
+}
+
+/* Text */
+
+.actionButton span:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.actionButton strong {
+  color: #3b3f40;
+
+  font-size: 11px;
+
+  font-weight: 800;
+
+  white-space: nowrap;
+}
+
+.actionButton small {
+  color: #786b52;
+
+  font-size: 9px;
+
+  white-space: nowrap;
+}
+
+/* =========================================================
+   EDIT BUTTON
+   ========================================================= */
+
+.editButton .buttonIcon {
+  background: #f5e5e3;
+
+  color: #46132d;
+}
+
+.editButton:hover {
+  border-color: #a16f70;
+}
+
+/* =========================================================
+   DOWNLOAD BUTTON
+   ========================================================= */
+
+.downloadButton .buttonIcon {
+  background: #f3eee3;
+
+  color: #786b52;
+}
+
+.downloadButton:hover {
+  border-color: #786b52;
+}
+
+/* =========================================================
+   PUBLISH BUTTON
+   ========================================================= */
+
+.publishButton {
+  background: #46132d;
+
+  border-color: #46132d;
+}
+
+.publishButton strong {
+  color: #ffffff;
+}
+
+.publishButton small {
+  color: #d1b1b8;
+}
+
+.publishButton .buttonIcon {
+  background: rgba(243, 162, 103, 0.15);
+
+  color: #f3a267;
+}
+
+.publishButton:hover {
+  background: #432d46;
+
+  border-color: #432d46;
+
+  box-shadow: 0 12px 30px rgba(70, 19, 45, 0.25);
+}
+
+/* =========================================================
+   PORTFOLIO CONTAINER
+   ========================================================= */
+
+.portfolioContainer {
+  width: min(1400px, calc(100% - 48px));
+
+  margin: 0 auto;
+
+  background: #ffffff;
+
+  border-radius: 18px;
+
+  overflow: hidden;
+
+  box-shadow: 0 20px 60px rgba(70, 19, 45, 0.12);
+}
+
+/* =========================================================
+   ERROR PAGE
+   ========================================================= */
+
+.errorPage {
+  min-height: 100vh;
+
+  padding: 30px;
+
+  display: flex;
+
+  align-items: center;
+  justify-content: center;
+
+  background: #f5f8ee;
+}
+
+.errorCard {
+  width: min(500px, 100%);
+
+  padding: 45px;
+
+  border-radius: 20px;
+
+  background: #ffffff;
+
+  text-align: center;
+
+  box-shadow: 0 20px 50px rgba(70, 19, 45, 0.1);
+}
+
+.errorCard h1 {
+  margin: 0 0 15px;
+
+  color: #46132d;
+
+  font-size: 28px;
+}
+
+.errorCard p {
+  margin: 0 0 25px;
+
+  color: #56666a;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+}
+
+.errorCard button {
+  padding: 12px 22px;
+
+  border: none;
+
+  border-radius: 8px;
+
+  background: #46132d;
+
+  color: #ffffff;
+
+  font-size: 12px;
+
+  font-weight: 700;
+
+  cursor: pointer;
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media (max-width: 1100px) {
+  .actionBar {
+    flex-direction: column;
+
+    align-items: stretch;
+  }
+
+  .actionButtons {
+    width: 100%;
+  }
+
+  .actionButton {
+    flex: 1;
+  }
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 700px) {
+  .previewHeader {
+    padding: 16px 20px;
+
+    align-items: flex-start;
+  }
+
+  .previewHeader h1 {
+    font-size: 21px;
+  }
+
+  .previewLabel {
+    font-size: 8px;
+  }
+
+  .backButton {
+    font-size: 10px;
+
+    padding: 9px 12px;
+  }
+
+  .actionBar {
+    width: calc(100% - 30px);
+
+    margin-top: 20px;
+
+    padding: 18px;
+
+    border-radius: 14px;
+  }
+
+  .actionButtons {
+    flex-direction: column;
+  }
+
+  .actionButton {
+    width: 100%;
+
+    min-width: 0;
+  }
+
+  .portfolioContainer {
+    width: calc(100% - 30px);
+
+    border-radius: 14px;
+  }
+}
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 450px) {
+  .previewHeader {
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+  .backButton {
+    align-self: flex-start;
+  }
+
+  .actionInfo p {
+    font-size: 11px;
+  }
+
+  .actionButton strong {
+    font-size: 10px;
+  }
+}

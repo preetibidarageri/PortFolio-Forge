@@ -1,0 +1,508 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  /* ============================================================
+     COLOR PALETTE — Based on your uploaded image
+     ============================================================ */
+
+  --primary: #46132d; /* Deep Burgundy */
+  --primary-light: #432d46; /* Plum */
+  --primary-dark: #2f4b40; /* Deep Green */
+
+  --accent: #f3a267; /* Peach */
+  --accent-hover: #a16f70; /* Dusty Rose */
+
+  --login-hover: #786b52; /* Taupe */
+
+  --text-white: #ffffff;
+  --text-dark: #2f4b40; /* Deep Green */
+  --text-muted: #7a7270; /* Warm Gray */
+
+  --bg-page: #eef0ed;
+  --bg-card: #ffffff;
+
+  --blue-gray: #56666a;
+  --navy: #273d5a;
+  --plum: #432d46;
+  --taupe: #786b52;
+
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+
+  --transition-smooth: all 0.25s ease-in-out;
+}
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, sans-serif;
+
+  background-color: var(--bg-page);
+  color: var(--text-dark);
+}
+
+/* ==========================================================================
+   NAVBAR COMPONENT
+   ========================================================================== */
+
+.navbar {
+  width: 100%;
+  background: var(--primary);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+
+  box-shadow: 0 4px 20px rgba(70, 19, 45, 0.18);
+}
+
+.navContainer {
+  max-width: 1200px;
+  min-height: 72px;
+  margin: 0 auto;
+  padding: 0 30px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* ==========================================================================
+   LOGO
+   ========================================================================== */
+
+.logo {
+  color: var(--text-white);
+  text-decoration: none;
+  font-size: 26px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+  white-space: nowrap;
+  user-select: none;
+
+  transition: var(--transition-smooth);
+}
+
+.logo span {
+  color: var(--accent);
+}
+
+.logo:hover {
+  color: #f3a267;
+}
+
+/* ==========================================================================
+   NAVIGATION LINKS
+   ========================================================================== */
+
+.navLinks {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.navLink {
+  position: relative;
+
+  padding: 10px 18px;
+
+  color: var(--text-white);
+  text-decoration: none;
+
+  font-size: 15px;
+  font-weight: 500;
+
+  border-radius: var(--radius-sm);
+
+  transition:
+    color 0.25s ease,
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+/* Modern animated background + underline */
+
+.navLink::before {
+  content: "";
+  position: absolute;
+
+  left: 50%;
+  bottom: 5px;
+
+  width: 0;
+  height: 2px;
+
+  background: var(--accent);
+  border-radius: 20px;
+
+  transform: translateX(-50%);
+
+  transition: width 0.3s ease;
+}
+
+.navLink::after {
+  content: "";
+
+  position: absolute;
+  inset: 0;
+
+  background: rgba(243, 162, 103, 0.08);
+
+  border-radius: var(--radius-sm);
+
+  opacity: 0;
+  transform: scale(0.85);
+
+  transition:
+    opacity 0.25s ease,
+    transform 0.25s ease;
+
+  z-index: -1;
+}
+
+.navLink:hover {
+  color: var(--accent);
+
+  transform: translateY(-2px);
+}
+
+.navLink:hover::before {
+  width: 55%;
+}
+
+.navLink:hover::after {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ==========================================================================
+   HEADER ACTION BUTTONS
+   ========================================================================== */
+
+.loginBtn {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+
+  background: transparent;
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    border-color 0.25s ease,
+    transform 0.25s ease;
+}
+
+.loginBtn:hover {
+  background: var(--accent);
+  color: var(--primary);
+
+  border-color: var(--accent);
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 16px rgba(243, 162, 103, 0.25);
+}
+
+/* ==========================================================================
+   REGISTER BUTTON
+   ========================================================================== */
+
+.registerBtn {
+  background: var(--accent);
+  color: var(--primary);
+
+  font-weight: 600;
+
+  border: 1px solid var(--accent);
+
+  transition:
+    background 0.25s ease,
+    color 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.registerBtn:hover {
+  background: var(--accent-hover);
+  color: var(--text-white);
+
+  border-color: var(--accent-hover);
+
+  transform: translateY(-3px);
+
+  box-shadow: 0 8px 20px rgba(161, 111, 112, 0.35);
+}
+
+/* ==========================================================================
+   MOBILE TOGGLE BAR BUTTON
+   ========================================================================== */
+
+.menuButton {
+  display: none;
+
+  width: 42px;
+  height: 42px;
+  padding: 8px;
+
+  border: none;
+  border-radius: var(--radius-md);
+
+  background: transparent;
+
+  cursor: pointer;
+
+  transition: var(--transition-smooth);
+}
+
+.menuButton span {
+  display: block;
+
+  width: 22px;
+  height: 2px;
+
+  margin: 5px auto;
+
+  background: var(--text-white);
+
+  border-radius: 2px;
+
+  transition: var(--transition-smooth);
+}
+
+.menuButton:hover {
+  background: rgba(243, 162, 103, 0.15);
+}
+
+.menuButton:hover span {
+  background: var(--accent);
+}
+
+/* ==========================================================================
+   CARD LAYOUT
+   ========================================================================== */
+
+.cardWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 60px 20px;
+}
+
+.card {
+  width: 100%;
+  max-width: 420px;
+
+  background: var(--bg-card);
+
+  padding: 32px;
+
+  border-radius: var(--radius-lg);
+
+  box-shadow: 0 10px 30px rgba(70, 19, 45, 0.08);
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+
+  border: 1px solid rgba(70, 19, 45, 0.05);
+}
+
+.cardTitle {
+  font-size: 24px;
+  font-weight: 700;
+
+  text-align: center;
+
+  color: var(--primary);
+}
+
+/* ==========================================================================
+   FORM CONTAINER
+   ========================================================================== */
+
+.formContainer {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* ==========================================================================
+   RESPONSIVE MEDIA QUERIES
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .navContainer {
+    min-height: 68px;
+    padding: 0 24px;
+  }
+
+  .logo {
+    font-size: 24px;
+  }
+
+  .menuButton {
+    display: block;
+
+    position: relative;
+    z-index: 1100;
+  }
+
+  .navLinks {
+    position: absolute;
+
+    top: 76px;
+    left: 16px;
+    right: 16px;
+
+    padding: 16px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+
+    gap: 8px;
+
+    background: rgba(70, 19, 45, 0.97);
+
+    border-radius: var(--radius-lg);
+
+    box-shadow: 0 16px 36px rgba(70, 19, 45, 0.3);
+
+    /* Dropdown Animation States */
+
+    opacity: 0;
+    visibility: hidden;
+
+    transform: translateY(-16px);
+
+    pointer-events: none;
+
+    transition: var(--transition-smooth);
+
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+
+  .navLinksOpen {
+    opacity: 1;
+    visibility: visible;
+
+    transform: translateY(0);
+
+    pointer-events: auto;
+  }
+
+  .navLink {
+    width: 100%;
+
+    padding: 14px 20px;
+
+    border-radius: var(--radius-md);
+
+    text-align: left;
+
+    transition:
+      background 0.25s ease,
+      color 0.25s ease,
+      padding-left 0.25s ease;
+  }
+
+  /* Mobile modern hover */
+
+  .navLink::before {
+    left: 10px;
+    bottom: 50%;
+
+    width: 3px;
+    height: 0;
+
+    transform: translateY(50%);
+
+    border-radius: 10px;
+
+    transition: height 0.25s ease;
+  }
+
+  .navLink::after {
+    background: rgba(243, 162, 103, 0.12);
+  }
+
+  .navLink:hover {
+    background: rgba(243, 162, 103, 0.08);
+
+    color: var(--accent);
+
+    padding-left: 28px;
+
+    transform: none;
+  }
+
+  .navLink:hover::before {
+    width: 3px;
+    height: 55%;
+  }
+
+  .loginBtn {
+    border: none;
+  }
+
+  .loginBtn:hover {
+    background: var(--accent);
+    color: var(--primary);
+
+    padding-left: 20px;
+
+    transform: none;
+  }
+
+  .registerBtn {
+    text-align: center;
+
+    background: var(--accent);
+    color: var(--primary);
+
+    border: 1px solid var(--accent);
+  }
+
+  .registerBtn:hover {
+    background: var(--accent-hover);
+    color: var(--text-white);
+
+    padding-left: 20px;
+
+    transform: none;
+  }
+}
+
+/* ==========================================================================
+   SMALL MOBILE
+   ========================================================================== */
+
+@media (max-width: 400px) {
+  .navContainer {
+    padding: 0 16px;
+  }
+
+  .logo {
+    font-size: 22px;
+  }
+
+  .navLinks {
+    left: 12px;
+    right: 12px;
+
+    top: 72px;
+  }
+
+  .card {
+    padding: 24px 16px;
+  }
+}

@@ -1,0 +1,362 @@
+.page {
+  min-height: calc(100vh - 73px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 50px 20px;
+  background: linear-gradient(135deg, #f5f8ee 0%, #f5e5e3 45%, #d1b1b8 100%);
+}
+
+.registerCard {
+  width: 100%;
+  max-width: 1050px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #ffffff;
+  border-radius: 26px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(70, 19, 45, 0.18);
+}
+
+.leftSection {
+  position: relative;
+  min-height: 650px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: #46132d;
+}
+
+.backgroundImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Shows the full image without cropping */
+  z-index: 0;
+  transition: transform 0.6s ease;
+}
+
+.leftSection:hover .backgroundImage {
+  transform: scale(1.04);
+}
+
+.imageOverlay {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(
+    135deg,
+    rgba(70, 19, 45, 0.78),
+    rgba(114, 76, 89, 0.48),
+    rgba(47, 75, 64, 0.35)
+  );
+}
+
+.glassCard {
+  position: relative;
+  z-index: 2;
+  width: 82%;
+  padding: 42px 38px;
+  border-radius: 24px;
+  background: rgba(250, 252, 245, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  box-shadow: 0 20px 50px rgba(35, 15, 25, 0.25);
+  color: #ffffff;
+}
+
+.glassBadge {
+  display: inline-flex;
+  padding: 7px 12px;
+  margin-bottom: 20px;
+  border-radius: 30px;
+  background: rgba(245, 229, 227, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: #f5e5e3;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 1.2px;
+}
+
+.glassCard h1 {
+  font-size: 38px;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.glassCard h1 span {
+  color: #f3a267;
+}
+
+.glassCard p {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #f5f8ee;
+  margin-bottom: 28px;
+}
+
+.features {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  color: #ffffff;
+  font-size: 14px;
+}
+
+.features div {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgba(245, 248, 238, 0.08);
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease;
+}
+
+.features div:hover {
+  background: rgba(243, 162, 103, 0.15);
+  transform: translateX(5px);
+}
+
+.check {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #f3a267;
+  color: #46132d;
+  font-weight: 700;
+}
+
+.rightSection {
+  padding: 50px;
+}
+
+.rightSection h2 {
+  color: #46132d;
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 8px;
+}
+
+.subtitle {
+  color: #56666a;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.inputGroup {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18px;
+}
+
+.inputGroup label {
+  color: #2f4b40;
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 7px;
+}
+
+.inputGroup input {
+  padding: 13px 14px;
+  border: 1px solid #d1b1b8;
+  border-radius: 9px;
+  font-size: 14px;
+  outline: none;
+  background: #ffffff;
+  color: #3b3f40;
+  transition:
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    background 0.25s ease;
+}
+
+.inputGroup input:focus {
+  border-color: #724c59;
+  background: #fffafa;
+  box-shadow: 0 0 0 3px rgba(161, 111, 112, 0.15);
+}
+
+.inputGroup input::placeholder {
+  color: #928c86;
+}
+
+.registerButton {
+  width: 100%;
+  padding: 14px;
+  border: none;
+  border-radius: 9px;
+  background: #46132d;
+  color: #ffffff;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+  transition:
+    background 0.25s ease,
+    transform 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+.registerButton:hover {
+  background: #724c59;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(70, 19, 45, 0.2);
+}
+
+.registerButton:active {
+  transform: translateY(0);
+  background: #3b3f40;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  margin: 24px 0;
+  color: #d1b1b8;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: #d1b1b8;
+}
+
+.divider span {
+  padding: 0 12px;
+  font-size: 13px;
+  color: #7a7270;
+}
+
+.googleButton {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 14px 24px;
+  background: #ffffff;
+  border: 1px solid #d1b1b8;
+  border-radius: 9px;
+  font-weight: 500;
+  font-size: 15px;
+  color: #3b3f40;
+  cursor: pointer;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transition:
+    background 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.googleButton:hover {
+  background: #f5f8ee;
+  border-color: #a16f70;
+  box-shadow: 0 5px 15px rgba(70, 19, 45, 0.1);
+  transform: translateY(-2px);
+}
+
+.googleButton:active {
+  background: #f5e5e3;
+  transform: scale(0.99);
+}
+
+.googleIconImage {
+  width: 18px;
+  height: 18px;
+  object-fit: contain;
+  display: block;
+  flex-shrink: 0;
+}
+
+.loginText {
+  text-align: center;
+  margin-top: 22px;
+  font-size: 14px;
+  color: #7a7270;
+}
+
+.loginText a {
+  color: #46132d;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+.loginText a:hover {
+  color: #724c59;
+}
+
+.loginText a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: #f3a267;
+  transition: width 0.25s ease;
+}
+
+.loginText a:hover::after {
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .registerCard {
+    grid-template-columns: 1fr;
+  }
+  .leftSection {
+    min-height: 500px;
+  }
+  .glassCard {
+    width: 85%;
+    padding: 35px 30px;
+  }
+  .glassCard h1 {
+    font-size: 30px;
+  }
+  .rightSection {
+    padding: 35px 30px;
+  }
+}
+
+@media (max-width: 480px) {
+  .page {
+    padding: 25px 15px;
+  }
+  .leftSection {
+    min-height: 460px;
+  }
+  .glassCard {
+    width: 88%;
+    padding: 28px 22px;
+  }
+  .glassCard h1 {
+    font-size: 27px;
+  }
+  .glassCard p {
+    font-size: 14px;
+  }
+  .features {
+    font-size: 13px;
+  }
+  .rightSection {
+    padding: 30px 20px;
+  }
+}

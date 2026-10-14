@@ -1,0 +1,100 @@
+/* ============================================================
+   GLOBAL RESET
+============================================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ============================================================
+   PORTFOLIOFORGE COLOR PALETTE
+============================================================ */
+
+:root {
+  /* Royal / Primary */
+  --primary: #46132d;
+  --primary-light: #432d46;
+  --primary-dark: #2f4b40;
+
+  /* Main Accent */
+  --accent: #f3a267;
+  --accent-hover: #a16f70;
+
+  /* Supporting Colors */
+  --taupe: #786b52;
+  --warm-gray: #7a7270;
+  --blue-gray: #56666a;
+  --navy: #273d5a;
+
+  /* Additional Palette */
+  --plum: #432d46;
+  --deep-burgundy: #46132d;
+  --deep-green: #2f4b40;
+
+  /* Light Backgrounds */
+  --bg-page: #eef0ed;
+  --bg-card: #ffffff;
+  --soft-rose: #f5e5e3;
+  --soft-pink: #d1b1b8;
+  --lavender-gray: #afaebd;
+
+  /* Text */
+  --text-white: #ffffff;
+  --text-dark: #3b3f40;
+  --text-muted: #7a7270;
+
+  /* Borders */
+  --border-light: rgba(70, 19, 45, 0.12);
+  --border-white: rgba(255, 255, 255, 0.35);
+
+  /* Radius */
+  --radius-sm: 8px;
+  --radius-md: 10px;
+  --radius-lg: 18px;
+
+  /* Transition */
+  --transition-smooth: all 0.25s ease-in-out;
+}
+
+/* ============================================================
+   BODY
+============================================================ */
+
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, sans-serif;
+
+  background-color: var(--bg-page);
+  color: var(--text-dark);
+
+  min-width: 320px;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* ============================================================
+   ROOT
+============================================================ */
+
+#root {
+  min-height: 100vh;
+}
